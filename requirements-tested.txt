@@ -1,0 +1,8 @@
+# Exact direct dependency versions used during verification on Python 3.14.4.
+# This is a tested snapshot, not a complete transitive lock file.
+streamlit==1.61.1
+pandas==2.3.3
+numpy==2.4.4
+plotly==6.7.0
+scikit-learn==1.8.0
+pytest==8.4.2

@@ -1,0 +1,13 @@
+supplier_id,name,category,annual_cost,quality,delivery,risk,sustainability,ai_readiness
+S001,Aster Services,Managed services,98000,88,94,20,75,84
+S002,Birch Operations,Managed services,82000,75,81,42,61,58
+S003,Cobalt Systems,Managed services,125000,96,97,15,88,93
+S004,Delta Support,Managed services,72000,65,57,82,48,45
+S005,Ember Digital,Managed services,108000,90,91,25,92,89
+S006,Fjord Networks,Managed services,95000,83,86,35,80,72
+S007,Grove Technical,Field services,89000,86,93,22,85,67
+S008,Harbor Fieldwork,Field services,75000,77,79,48,65,51
+S009,Iris Engineering,Field services,118000,95,96,18,91,80
+S010,Juniper Response,Field services,69000,70,64,81,50,35
+S011,Kestrel Service,Field services,99000,89,90,28,79,76
+S012,Lumen Maintenance,Field services,92000,84,88,32,87,70

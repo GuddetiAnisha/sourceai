@@ -1,0 +1,9 @@
+use_case,owner,business_value,feasibility,data_readiness,adoption_potential
+Supplier evidence extraction,Procurement operations,4,4,4,4
+Bid anomaly detection,Sourcing analytics,5,3,3,4
+Supplier risk early warning,Risk lead,5,3,2,4
+Contract clause assistant,Legal operations,4,4,3,3
+Sustainability evidence checks,ESG lead,4,3,2,4
+Demand and spend forecasting,Finance analytics,5,3,3,3
+Supplier onboarding assistant,Procurement operations,3,5,4,5
+Service scope standardization,Category manager,4,4,4,3

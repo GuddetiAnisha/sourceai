@@ -1,0 +1,13 @@
+bid_id,supplier_id,lot,annual_fee,setup_fee,transition_days,sla
+B001,S001,Service desk,96000,8000,45,98
+B002,S002,Service desk,78000,15000,60,95
+B003,S003,Service desk,119000,5000,30,99
+B004,S004,Service desk,67000,22000,120,91
+B005,S005,Service desk,103000,7000,40,98
+B006,S006,Service desk,91000,10000,65,96
+B007,S007,On-site maintenance,85000,12000,50,97
+B008,S008,On-site maintenance,72000,18000,80,94
+B009,S009,On-site maintenance,112000,6000,35,99
+B010,S010,On-site maintenance,65000,25000,100,92
+B011,S011,On-site maintenance,95000,9000,55,98
+B012,S012,On-site maintenance,89000,11000,60,97
