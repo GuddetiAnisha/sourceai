@@ -138,3 +138,44 @@ Tests cover validation failures, scoring formulas and invariants, normalization,
 The implementation separates domain logic from the UI so calculations can be reused and tested independently. A shallow tree is intentionally inspectable, while deterministic roadmap rules make the decision chain auditable. This offers concrete topics for a portfolio presentation: multi-criteria decision analysis, synthetic-data limitations, validation, human oversight, sensitivity and explainability.
 
 Useful extensions include a Pareto-front comparison, persisted scenario snapshots, real outcome-based model evaluation, Monte Carlo cost uncertainty and evidence-backed document extraction. These are future work, not current features.
+
+
+## Test portfolio optimization extension
+
+SourceAI now includes a software-only test-portfolio analysis module for identifying potentially redundant experiments and constructing a smaller candidate plan while preserving explicit requirement coverage.
+
+Implemented capabilities:
+- requirement-to-test coverage matrix generation
+- pairwise requirement-overlap analysis
+- numeric outcome-similarity comparison
+- redundant-test candidate detection
+- cost- and duration-aware greedy test-plan optimization
+- before/after reporting for selected tests, removed tests, requirement coverage, total cost and total duration
+- synthetic example portfolio and automated tests
+
+The optimizer is a transparent greedy heuristic, not proof of a globally minimal design of experiments. The sample data is synthetic and the extension does not use Volvo Penta test data or represent a validated industrial testing process.
+
+### Example use
+
+```python
+import pandas as pd
+from test_optimization import (
+    redundant_candidates,
+    optimize_test_plan,
+)
+
+tests = pd.read_csv("test_portfolio_sample.csv")
+redundant = redundant_candidates(
+    tests,
+    outcome_columns=["signal_a", "signal_b"],
+)
+result = optimize_test_plan(tests)
+
+print(redundant)
+print(result)
+```
+
+### CV-safe extension description
+
+- Extended SourceAI with a test-portfolio optimization module that detects overlapping tests using requirement coverage and numeric outcome similarity.
+- Implemented a cost- and duration-aware greedy selector that reduces candidate test sets while preserving explicit requirement coverage.
