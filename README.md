@@ -133,6 +133,35 @@ Tests cover validation failures, scoring formulas and invariants, normalization,
 
 `requirements-tested.txt` records the exact direct dependency versions verified on Python 3.14.4 on Windows. Use `python -m pip install -r requirements-tested.txt` to reproduce those direct versions; transitive dependencies are not locked. Other Python versions have not been tested in this delivery.
 
+## Validation results
+
+The core sourcing decision logic was validated locally on Windows using the bundled demonstration supplier and bid datasets.
+
+- Automated test suite: **3/3 tests passed**.
+- Default supplier ranking was reproduced successfully across 12 suppliers.
+- Weight normalization was verified to sum exactly to **1.0**.
+- Repeated runs produced the **same deterministic ranking**.
+- Sensitivity testing changed rankings in the expected direction when decision priorities changed:
+  - with a 60% cost weight, **Aster Services** ranked first;
+  - with a 50% quality weight, **Cobalt Systems** ranked first.
+- Bid evaluation correctly enforced the default constraints of **SLA >= 95** and **transition <= 90 days**.
+- Ineligible bids received no eligible rank, while eligible bids were ranked independently within each service lot.
+
+These checks validate the implemented scoring, normalization, sensitivity, determinism, and bid-constraint logic for the synthetic demonstration scenarios. They do **not** establish real-world procurement effectiveness or predictive validity.
+
+### Validation summary
+
+| Check | Result |
+|---|---|
+| Automated tests | 3/3 passed |
+| Weight normalization | Sum = 1.0 |
+| Ranking determinism | Passed |
+| Cost-priority sensitivity | Ranking changed as expected |
+| Quality-priority sensitivity | Ranking changed as expected |
+| SLA constraint handling | Passed |
+| Transition constraint handling | Passed |
+| Eligible ranking by lot | Passed |
+
 ## Portfolio discussion and future work
 
 The implementation separates domain logic from the UI so calculations can be reused and tested independently. A shallow tree is intentionally inspectable, while deterministic roadmap rules make the decision chain auditable. This offers concrete topics for a portfolio presentation: multi-criteria decision analysis, synthetic-data limitations, validation, human oversight, sensitivity and explainability.
